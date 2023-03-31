@@ -28,8 +28,7 @@ model:any={};
   {
     this.accountService.login(this.model).subscribe({
       next :_ =>
-       this.router.navigateByUrl('/members'),
-       error: error =>this.toastr.error(error.error)
+       this.router.navigateByUrl('/members')
       })
       
       
