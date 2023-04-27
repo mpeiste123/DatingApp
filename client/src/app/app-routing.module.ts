@@ -17,7 +17,7 @@ runGuardsAndResolvers:'always',
 canActivate:[AuthGuard],
 children:[
   {path:'members', component:MembersListComponent},
-  {path:'members/:id', component:MemberDetailComponent},
+  {path:'members/:username', component:MemberDetailComponent},
   {path:'lists', component:ListsComponent},
   {path:'messages', component:MessagesComponent},
 ]
@@ -26,7 +26,7 @@ children:[
   {path:'not-found', component: NotFoundComponent},
   {path:'server-error', component: ServerErrorComponent},
 
-  {path:'**',component:NotFoundComponent,pathMatch:'full'},
+  {path:'**',component:HomeComponent,pathMatch:'full'},
 
 ];
 
