@@ -9,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -18,6 +20,8 @@ canActivate:[AuthGuard],
 children:[
   {path:'members', component:MembersListComponent},
   {path:'members/:username', component:MemberDetailComponent},
+  {path:'member/edit', component:MemberEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
+
   {path:'lists', component:ListsComponent},
   {path:'messages', component:MessagesComponent},
 ]
